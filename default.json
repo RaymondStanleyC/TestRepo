@@ -1,0 +1,19 @@
+{
+  "name": "OrderService",
+  "description": "Service responsible for managing the flow of orders through the system. It includes features such as order submission, order modification, and order status tracking.",
+  "features": {
+    "OrderSubmission": {
+      "description": "Allows customers to submit an order for processing.",
+      "enabled": false
+    },
+    "OrderModification": {
+      "description": "Allows customers to modify an order before it is processed.",
+      "enabled": false
+    },
+    "OrderStatusTracking": {
+      "description": "Allows customers to track the status of an order.",
+      "enabled": false
+    }
+  },
+  "tags": ["critical", "order-management"]
+}

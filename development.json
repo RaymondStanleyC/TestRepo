@@ -1,0 +1,7 @@
+{
+  "features": {
+    "OrderStatusTracking": {
+      "enabled": true
+    }
+  }
+}
