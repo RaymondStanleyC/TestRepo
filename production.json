@@ -1,12 +1,26 @@
 {
+  "spring": {
+    "datasource": {
+      "url": "jdbc:mysql://somedomain.com/order-service",
+      "password": "somePassword"
+    }
+  },
+  "kafka": {
+    "bootstrapServers": "somedomain.com/kafka",
+    "autoCommit": true,
+    "autoCreateTopicsEnable": true
+  },
   "features": {
     "OrderSubmission": {
+      "description": "Allows customers to submit an order for processing.",
       "enabled": true
     },
     "OrderModification": {
+      "description": "Allows customers to modify an order before it is processed.",
       "enabled": true
     },
     "OrderStatusTracking": {
+      "description": "Allows customers to track the status of an order.",
       "enabled": true
     }
   }

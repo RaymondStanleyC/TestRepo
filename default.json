@@ -1,6 +1,30 @@
 {
-  "name": "OrderService",
-  "description": "Service responsible for managing the flow of orders through the system. It includes features such as order submission, order modification, and order status tracking.",
+  "spring": {
+    "application": {
+      "name": "OrderService",
+      "description": "Service responsible for managing the flow of orders through the system. It includes features such as order submission, order modification, and order status tracking."
+    },
+    "datasource": {
+      "url": "jdbc:mysql://localhost:3306/order-service",
+      "username": "someUsername",
+      "driver-class-name": "com.mysql.cj.jdbc.Driver"
+    }
+  },
+  "kafka": {
+    "bootstrapServers": "localhost:9092",
+    "groupId": "order-service",
+    "autoCommit": false,
+    "autoOffsetReset": "earliest",
+    "keyDeserializer": "org.apache.kafka.common.serialization.StringDeserializer",
+    "valueDeserializer": "org.apache.kafka.common.serialization.StringDeserializer",
+    "keySerializer": "org.apache.kafka.common.serialization.StringSerializer",
+    "valueSerializer": "org.apache.kafka.common.serialization.StringSerializer",
+    "autoCreateTopicsEnable": true,
+    "enableAutoCommit": false,
+    "autoCommitIntervalMs": 5000,
+    "sessionTimeoutMs": 30000,
+    "heartbeatIntervalMs": 2500
+  },
   "features": {
     "OrderSubmission": {
       "description": "Allows customers to submit an order for processing.",
