@@ -1,0 +1,153 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "spring": {
+      "type": "object",
+      "properties": {
+        "application": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
+          },
+          "required": ["name", "description"]
+        },
+        "datasource": {
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "username": {
+              "type": "string"
+            },
+            "driver-class-name": {
+              "type": "string"
+            }
+          },
+          "required": ["url", "username", "driver-class-name"]
+        }
+      },
+      "required": ["application", "datasource"]
+    },
+    "kafka": {
+      "type": "object",
+      "properties": {
+        "bootstrapServers": {
+          "type": "string"
+        },
+        "groupId": {
+          "type": "string"
+        },
+        "autoCommit": {
+          "type": "boolean"
+        },
+        "autoOffsetReset": {
+          "type": "string",
+          "enum": ["earliest", "latest", "none"]
+        },
+        "keyDeserializer": {
+          "type": "string"
+        },
+        "valueDeserializer": {
+          "type": "string"
+        },
+        "keySerializer": {
+          "type": "string"
+        },
+        "valueSerializer": {
+          "type": "string"
+        },
+        "autoCreateTopicsEnable": {
+          "type": "boolean"
+        },
+        "enableAutoCommit": {
+          "type": "boolean"
+        },
+        "autoCommitIntervalMs": {
+          "type": "integer"
+        },
+        "sessionTimeoutMs": {
+          "type": "integer"
+        },
+        "heartbeatIntervalMs": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "bootstrapServers",
+        "groupId",
+        "autoCommit",
+        "autoOffsetReset",
+        "keyDeserializer",
+        "valueDeserializer",
+        "keySerializer",
+        "valueSerializer",
+        "autoCreateTopicsEnable",
+        "enableAutoCommit",
+        "autoCommitIntervalMs",
+        "sessionTimeoutMs",
+        "heartbeatIntervalMs"
+      ]
+    },
+    "features": {
+      "type": "object",
+      "properties": {
+        "OrderSubmission": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "enabled": {
+              "type": "boolean"
+            }
+          },
+          "required": ["description", "enabled"]
+        },
+        "OrderModification": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "enabled": {
+              "type": "boolean"
+            }
+          },
+          "required": ["description", "enabled"]
+        },
+        "OrderStatusTracking": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "enabled": {
+              "type": "boolean"
+            }
+          },
+          "required": ["description", "enabled"]
+        }
+      },
+      "required": [
+        "OrderSubmission",
+        "OrderModification",
+        "OrderStatusTracking"
+      ]
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": ["spring", "kafka", "features", "tags"]
+}
