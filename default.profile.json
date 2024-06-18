@@ -28,16 +28,18 @@
   "features": {
     "OrderSubmission": {
       "description": "Allows customers to submit an order for processing.",
-      "enabled": false
+      "enabled": false,
+      "tags": ["critical", "order-management"]
     },
     "OrderModification": {
       "description": "Allows customers to modify an order before it is processed.",
-      "enabled": false
+      "enabled": false,
+      "tags": ["critical", "order-management"]
     },
     "OrderStatusTracking": {
       "description": "Allows customers to track the status of an order.",
-      "enabled": false
+      "enabled": false,
+      "tags": ["non-critical", "order-management"]
     }
-  },
-  "tags": ["critical", "order-management"]
+  }
 }

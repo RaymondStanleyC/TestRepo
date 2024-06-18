@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://somedomain.com/organisation/project/schema/v0.0.0.json",
+  "$id": "https://somedomain.com/organisation/project/schema/v1.0.1.json",
   "type": "object",
   "properties": {
     "spring": {
@@ -108,6 +108,12 @@
             },
             "enabled": {
               "type": "boolean"
+            },
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             }
           },
           "required": ["description", "enabled"]
@@ -120,6 +126,12 @@
             },
             "enabled": {
               "type": "boolean"
+            },
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             }
           },
           "required": ["description", "enabled"]
@@ -132,6 +144,12 @@
             },
             "enabled": {
               "type": "boolean"
+            },
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             }
           },
           "required": ["description", "enabled"]
@@ -142,12 +160,6 @@
         "OrderModification",
         "OrderStatusTracking"
       ]
-    },
-    "tags": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
     }
   },
   "required": ["spring", "kafka", "features", "tags"]
