@@ -2,18 +2,22 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://somedomain.com/organisation/project/schema/v1.0.1.json",
   "type": "object",
+  "description": "The schema for the application's configuration.",
   "properties": {
     "spring": {
       "type": "object",
+      "description": "The configuration for the Spring Boot application.",
       "properties": {
         "application": {
           "type": "object",
           "properties": {
             "name": {
-              "type": "string"
+              "type": "string",
+              "description": "The name of the application."
             },
             "description": {
-              "type": "string"
+              "type": "string",
+              "description": "A description of the application's purpose."
             }
           },
           "required": ["name", "description"]
@@ -23,13 +27,16 @@
           "properties": {
             "url": {
               "type": "string",
-              "format": "uri"
+              "format": "uri",
+              "description": "The URL of the database to connect to."
             },
             "username": {
-              "type": "string"
+              "type": "string",
+              "description": "The username to use when connecting to the database."
             },
             "driver-class-name": {
-              "type": "string"
+              "type": "string",
+              "description": "The driver class to use when connecting to the database."
             }
           },
           "required": ["url", "username", "driver-class-name"]
@@ -39,46 +46,56 @@
     },
     "kafka": {
       "type": "object",
+      "description": "The configuration for the Kafka broker.",
       "properties": {
         "bootstrapServers": {
-          "type": "string"
+          "type": "string",
+          "description": "The URL of the Kafka broker to connect to."
         },
         "groupId": {
-          "type": "string"
+          "type": "string",
+          "description": "The group ID to use when connecting to the Kafka broker."
         },
         "autoCommit": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "Whether to automatically commit offsets to Kafka."
         },
         "autoOffsetReset": {
           "type": "string",
-          "enum": ["earliest", "latest", "none"]
+          "enum": ["earliest", "latest", "none"],
+          "description": "The strategy to use when resetting offsets in Kafka."
         },
         "keyDeserializer": {
-          "type": "string"
+          "type": "string",
+          "description": "The key deserializer to use when deserializing messages from Kafka."
         },
         "valueDeserializer": {
-          "type": "string"
+          "type": "string",
+          "description": "The value deserializer to use when deserializing messages from Kafka."
         },
         "keySerializer": {
-          "type": "string"
+          "type": "string",
+          "description": "The key serializer to use when serializing messages to Kafka."
         },
         "valueSerializer": {
-          "type": "string"
+          "type": "string",
+          "description": "The value serializer to use when serializing messages to Kafka."
         },
         "autoCreateTopicsEnable": {
-          "type": "boolean"
-        },
-        "enableAutoCommit": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "Whether to automatically create topics in Kafka."
         },
         "autoCommitIntervalMs": {
-          "type": "integer"
+          "type": "integer",
+          "description": "The interval at which to commit offsets to Kafka."
         },
         "sessionTimeoutMs": {
-          "type": "integer"
+          "type": "integer",
+          "description": "The session timeout to use when connecting to Kafka."
         },
         "heartbeatIntervalMs": {
-          "type": "integer"
+          "type": "integer",
+          "description": "The heartbeat interval to use when connecting to Kafka."
         }
       },
       "required": [
@@ -99,6 +116,7 @@
     },
     "features": {
       "type": "object",
+      "description": "The configuration for features in the application.",
       "properties": {
         "OrderSubmission": {
           "type": "object",
