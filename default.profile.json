@@ -20,7 +20,6 @@
     "keySerializer": "org.apache.kafka.common.serialization.StringSerializer",
     "valueSerializer": "org.apache.kafka.common.serialization.StringSerializer",
     "autoCreateTopicsEnable": true,
-    "enableAutoCommit": false,
     "autoCommitIntervalMs": 5000,
     "sessionTimeoutMs": 30000,
     "heartbeatIntervalMs": 2500

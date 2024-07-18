@@ -108,7 +108,6 @@
         "keySerializer",
         "valueSerializer",
         "autoCreateTopicsEnable",
-        "enableAutoCommit",
         "autoCommitIntervalMs",
         "sessionTimeoutMs",
         "heartbeatIntervalMs"
