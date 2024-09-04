@@ -28,7 +28,15 @@
     "OrderSubmission": {
       "description": "Allows customers to submit an order for processing.",
       "enabled": false,
-      "tags": ["critical", "order-management"]
+      "tags": ["critical", "order-management"],
+      "client-configurations": [
+        {
+          "url": "https://configcenter.io/order-submission",
+          "username": "api-user"
+        },
+        ["Authorization", "User-Agent", "X-Request-Id"],
+        "500ms"
+      ]
     },
     "OrderModification": {
       "description": "Allows customers to modify an order before it is processed.",

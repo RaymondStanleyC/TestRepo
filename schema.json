@@ -131,6 +131,39 @@
               "items": {
                 "type": "string"
               }
+            },
+            "client-configurations": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "url": {
+                      "type": "string"
+                    },
+                    "username": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["url", "username"]
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "enum": [
+                      "Authorization",
+                      "User-Agent",
+                      "X-Request-Id",
+                      "Content-Type"
+                    ]
+                  }
+                },
+                {
+                  "type": "string",
+                  "format": "duration"
+                }
+              ],
+              "items": { "type": "string" }
             }
           },
           "required": ["description", "enabled"]
